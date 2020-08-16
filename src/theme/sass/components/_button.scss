@@ -1,0 +1,29 @@
+.button{
+
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 40px;
+    font-size: 18px;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    transition: all 0.2s ease;
+    text-align: center;
+
+    @include tablet{
+        padding: 11px 40px;
+        font-size: 16px;
+    }
+
+    &--secondary{
+        background-color: $brand-secondary;
+        color: $brand-light;
+
+        &:hover{
+            background-color: $brand-primary;
+        }
+
+    }
+
+}
+

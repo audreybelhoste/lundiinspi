@@ -1,0 +1,61 @@
+// Wordpress base style for image alignment in wysiwyg editor
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+.alignleft, img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left;
+}
+.alignright, img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right;
+}
+.aligncenter, img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*::selection{
+  background: $brand-primary;
+  color: $brand-secondary;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+img{
+  max-width: 100%;
+  height:auto;
+}
+
+.skip-links{
+  opacity:0;
+  height:0;
+  overflow:hidden;
+  margin:0;
+  list-style: none;
+  &:focus{
+    opacity:1;
+    height:auto;
+  }
+}
+//Selectors :focus-within should be separated
+//for compatibility with Edge and IE11
+.skip-links:focus-within{
+  opacity:1;
+  height:auto;
+}

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:wght@400;700&display=swap');
+
+.font{
+
+    &-notosans{
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    &-regular{
+        font-weight: 400;
+    }
+
+    &-bold{
+        font-weight: 700;
+    }
+
+}

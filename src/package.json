@@ -1,0 +1,32 @@
+{
+  "name": "lundiinspi",
+  "prettyName": "© Lundi Inspi by Nicolas et Audrey Schwartz",
+  "version": "0.0.1",
+  "description": "Site de Lundi Inspi",
+  "main": "gulpfile.js",
+  "author": "Nicolas et Audrey Schwartz",
+  "license": "MIT",
+  "dependencies": {
+    "owl.carousel": "^2.3.4"
+  },
+  "devDependencies": {
+    "child_process": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-add-src": "^1.0.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-filter": "^6.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "merge-stream": "^2.0.0",
+    "run-sequence": "^2.2.1"
+  }
+}
