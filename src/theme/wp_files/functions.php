@@ -10,8 +10,8 @@ function setup_theme() {
 	/**
 	 * Assets
 	 */
-	add_action('wp_enqueue_scripts', 'ci_assets');
-	function ci_assets() {
+	add_action('wp_enqueue_scripts', 'li_assets');
+	function li_assets() {
 
 		/*
 		 * CSS
@@ -37,8 +37,8 @@ function setup_theme() {
 		 * JS
 		 */
 		$js =	array(
-			'ci_lib'	=> array('url' => '/js/lib.js', 'deps' => array('jquery')),
-			'ci_main'	=> array('url' => '/js/main.js', 'deps' => array('ci_lib'))
+			'li_lib'	=> array('url' => '/js/lib.js', 'deps' => array('jquery')),
+			'li_main'	=> array('url' => '/js/main.js', 'deps' => array('li_lib'))
 		);
 
 		// use jquery 3.4.0
@@ -60,7 +60,7 @@ function setup_theme() {
 		}
 
 		// pass Ajax Url to main.js
-        wp_localize_script('ci_main', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
+        wp_localize_script('li_main', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
 
 	}
 
@@ -148,41 +148,41 @@ function setup_theme() {
 	// Load front css into editor
     add_editor_style('css/main.css');
     
-	add_filter('tiny_mce_before_init', 'custom_tinyMCE_menu_bar');
-	function custom_tinyMCE_menu_bar($init_array) {
+	// add_filter('tiny_mce_before_init', 'custom_tinyMCE_menu_bar');
+	// function custom_tinyMCE_menu_bar($init_array) {
 
-        // Add custom buttons formats
-		$init_array['style_formats'] = json_encode(array(
-			array(
-				'title' => __('Bouton jaune', '@@themeName'),
-				'classes' => 'btn',
-				'selector' => 'a'
-			),
-			array(
-				'title' => __('Bouton blanc', '@@themeName'),
-				'classes' => 'btn-light',
-				'selector' => 'a'
-			),
-		));
+    //     // Add custom buttons formats
+	// 	$init_array['style_formats'] = json_encode(array(
+	// 		array(
+	// 			'title' => __('Bouton jaune', '@@themeName'),
+	// 			'classes' => 'btn',
+	// 			'selector' => 'a'
+	// 		),
+	// 		array(
+	// 			'title' => __('Bouton blanc', '@@themeName'),
+	// 			'classes' => 'btn-light',
+	// 			'selector' => 'a'
+	// 		),
+	// 	));
 		
-		$init_array['textcolor_map'] = json_encode(array(
-			'0E2B48', 'Couleur principal',
-			'00B0F0', 'Bleu clair',
-		));
+	// 	$init_array['textcolor_map'] = json_encode(array(
+	// 		'0E2B48', 'Couleur principal',
+	// 		'00B0F0', 'Bleu clair',
+	// 	));
         
-        // Custom text formats
-        $init_array['block_formats'] = 'Paragraphe=p;Titre niveau 2=h2;Titre niveau 3=h3;';
+    //     // Custom text formats
+    //     $init_array['block_formats'] = 'Paragraphe=p;Titre niveau 2=h2;Titre niveau 3=h3;';
 
-        // Custom text colors
-		// $init_array['textcolor_map'] = '[
-        //     "E25303", "Couleur primaire",
-		// 	"121212", "Couleur secondaire",
-        // ]';
-        // $init_array['textcolor_rows'] = 1;
+    //     // Custom text colors
+	// 	// $init_array['textcolor_map'] = '[
+    //     //     "E25303", "Couleur primaire",
+	// 	// 	"121212", "Couleur secondaire",
+    //     // ]';
+    //     // $init_array['textcolor_rows'] = 1;
         
 
-		return $init_array;
-    }
+	// 	return $init_array;
+    // }
     
     // Remove custom color picker
     // add_filter( 'tiny_mce_plugins', 'wpse_tiny_mce_remove_custom_colors' );
@@ -222,28 +222,5 @@ function setup_theme() {
 		$phpmailer->ReturnPath = $phpmailer->From;
 	}
 
-
-    /********************************************/
-    /* START Gravity Forms                      */
-    /********************************************/
-    // Fix special characters in Gravity Forms mail subjects
-    add_filter( 'gform_pre_send_email', 'before_email' );
-    function before_email( $email ) {
-        $email['subject'] = htmlspecialchars_decode($email['subject']);
-        return $email;
-    }
-
-    // Change default Gravity Forms notification address 
-    add_filter( "gform_notification", "change_notification_email", 10, 3 );
-    function change_notification_email( $notification, $form, $entry ){
-        $custom_email = get_field("gform_default_address", "option");
-        if ( $custom_email && $notification["to"] == "{admin_email}" ) {
-            $notification["to"] = get_field("gform_default_address", "option");
-        }
-        return $notification;
-    }
-    /********************************************/
-    /* END Gravity Forms                        */
-    /********************************************/
 }
 
