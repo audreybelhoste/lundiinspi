@@ -1,0 +1,2 @@
+!function(t){"use strict";var e=function(){t("#toggleNav").click(function(){t(this).toggleClass("active"),t(".mainHeader__nav").toggleClass("active")}),t(".menu-item-has-children > a").click(function(e){var a;t(window).width()<992&&(e.preventDefault(),(a=t(this).parent().find(".sub-menu")).hasClass("active")?t(".sub-menu").removeClass("active"):(t(".sub-menu").removeClass("active"),a.addClass("active")))})};t(document).ready(function(){e()})}(jQuery);
+//# sourceMappingURL=main.js.map

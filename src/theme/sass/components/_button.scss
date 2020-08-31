@@ -15,12 +15,13 @@
         font-size: 16px;
     }
 
-    &--secondary{
-        background-color: $brand-secondary;
+    &--dark{
+        background-color: $brand-dark;
         color: $brand-light;
 
         &:hover{
-            background-color: $brand-primary;
+            background-color: $brand-light;
+            color: $brand-dark;
         }
 
     }

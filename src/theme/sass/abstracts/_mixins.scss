@@ -1,10 +1,4 @@
 //== Breakpoints
-@mixin huge {
-    @media (min-width: $min-hu) {
-        @content;
-    }
-}
-
 @mixin desktop {
     @media (min-width: $min-lg) {
         @content;
@@ -31,12 +25,6 @@
 
 @mixin mobile {
     @media (max-width: $max-xs) {
-        @content;
-    }
-}
-
-@mixin small {
-    @media (max-width: $max-xxs) {
         @content;
     }
 }

@@ -1,13 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:wght@400;600;700&display=swap');
+
+@font-face {
+    font-family: 'Moon';
+    src: url('../fonts/Moon_Bold.otf') format("opentype");
+    font-weight: 700;
+  }
 
 .font{
 
-    &-notosans{
-        font-family: 'Noto Sans', sans-serif;
+    &-raleway{
+        font-family: 'Raleway', sans-serif;
+    }
+
+    &-moon{
+        font-family: 'Moon', sans-serif;
     }
 
     &-regular{
         font-weight: 400;
+    }
+
+    &-semibold{
+        font-weight: 600;
     }
 
     &-bold{

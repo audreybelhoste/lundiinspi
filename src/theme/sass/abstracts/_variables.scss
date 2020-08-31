@@ -1,27 +1,14 @@
 // == Colors
-$brand-primary: #00B0F0;
-$brand-secondary: #0E2B48;
-$brand-tertiary: #336699;
+$brand-j2s: #C6CCAE;
+$brand-manga: #282930;
+$brand-video: #252A57;
 
-$brand-light: #ffffff;
-$brand-dark: #000000;
-$brand-grey: #CDE7F2;
+$brand-light: #F6F6F6;
+$brand-dark: #555555;
 
-$brand-text: #0E2B48;
+$brand-text: #555555;
 
-
-//== Screen width
-//With bootstrap
-//$min-xs: $screen-xs-min;
-//$max-xs: $screen-xs-max;
-//$min-sm: $screen-sm-min;
-//$max-sm: $screen-sm-max;
-//$min-md: $screen-md-min;
-//$max-md: $screen-md-max;
-//$min-lg: $screen-lg-min;
-
-//Without bootstrap
-$max-xxs: 359px;
+//Screen width
 $min-xs: 480px;
 $max-xs: 767px;
 $min-sm: 768px;
@@ -29,8 +16,6 @@ $max-sm: 991px;
 $min-md: 992px;
 $max-md: 1199px;
 $min-lg: 1200px;
-$max-lg: 1319px;
-$min-hu: 1320px;
 
 
 // == Taille
